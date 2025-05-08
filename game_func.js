@@ -35,7 +35,8 @@ export async function game_generate_text(nbWords, theme)
             Rédige directement la phrase sans contexte préalable.`
     }]
 
-    const res = await gpt_request(prompt);
+    var res = await gpt_request(prompt);
+    res.replace(/’/g, "'")
     return res;
 }
 
